@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Cover Studio — GTA 6-style cover art from your photos</title>
+<meta name="description" content="Turn your photos into a dense, sun-soaked GTA 6-style cover: 7-panel comic grid, huge striped title, neon script, role labels, starburst seal. Offline, free, PNG export.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="brand-mark">VC</span>
+    <div>
+      <h1>VICE COVER STUDIO</h1>
+      <p>Turn your photos into GTA 6-style cover art — free, offline, yours.</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button id="shuffleBtn" class="btn btn-gold" type="button">🎲 Shuffle it</button>
+    <button id="exportBtn" class="btn btn-pink" type="button">⬇ Export PNG</button>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="preview-col">
+    <div class="preview-wrap">
+      <canvas id="preview" width="1080" height="1080" aria-label="Cover preview"></canvas>
+      <div class="preview-hint" id="previewHint">Click a panel to select it · drag on the preview to pan that photo</div>
+    </div>
+    <div class="size-row" id="sizeRow" role="group" aria-label="Export size"></div>
+    <div class="photo-strip" id="photoStrip" aria-label="Photos"></div>
+    <label class="upload">
+      <input type="file" id="uploadInput" accept="image/*" multiple hidden>
+      <span class="btn btn-ghost">＋ Add your photos</span>
+    </label>
+  </section>
+
+  <aside class="controls">
+    <section class="card">
+      <h2>1 · Layout</h2>
+      <div class="chips" id="layoutChips"></div>
+    </section>
+    <section class="card">
+      <h2>2 · Colour grade</h2>
+      <div class="chips" id="gradeChips"></div>
+    </section>
+    <section class="card">
+      <h2>3 · Caption preset</h2>
+      <div class="chips" id="captionChips"></div>
+      <label class="field">Title
+        <input id="titleInput" type="text" maxlength="30" value="PALM FEVER">
+      </label>
+      <label class="field">Script subtitle
+        <input id="scriptInput" type="text" maxlength="40" value="one last summer">
+      </label>
+      <label class="field">Tagline
+        <input id="taglineInput" type="text" maxlength="60" value="FIVE FRIENDS · ONE COAST · NO WAY BACK">
+      </label>
+      <label class="field">Press quote
+        <input id="quoteInput" type="text" maxlength="70" value="“PURE GOLDEN-HOUR MAYHEM” — THE HARBOR GAZETTE">
+      </label>
+      <label class="field">Location chip
+        <input id="locationInput" type="text" maxlength="40" value="CORAL CAUSEWAY · 7:15 PM">
+      </label>
+    </section>
+    <section class="card">
+      <h2>4 · Panels <span class="muted" id="panelCount"></span></h2>
+      <p class="muted small">Select a panel below, then drag its photo on the preview to reposition it.</p>
+      <div id="panelList"></div>
+    </section>
+    <section class="card note">
+      <h2>About the art</h2>
+      <p>Every cover is drawn fresh from your photos — no Rockstar Games logos,
+      artwork or fonts. Typefaces: Anton + Pacifico (SIL Open Font License).
+      Sample photos are AI-generated for this studio. Export any size, keep the PNG.</p>
+    </section>
+  </aside>
+</main>
+
+<footer class="foot">
+  <span>VICE COVER STUDIO · 100% ORIGINAL COVER ART · SHOT ON YOUR CAMERA</span>
+  <span class="muted">Built for make.fun — “Make GTA 6 Cover Art”</span>
+</footer>
+
+<script src="src/cover.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
